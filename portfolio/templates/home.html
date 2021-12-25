@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<header class="row bg-black">
+  <div class="col-md-4">
+    <img src="{% static 'portfolio/profile.jpeg' %}">
+  </div>
+  <div class="col-md-8 my-auto">
+    <h1>I am <strong>Ryan Ray</strong></h1>
+    <h3>I am a Python Fullstack Developer</h3>
+    <p>
+      Elit illo error saepe soluta tempore Blanditiis est ab maxime unde quos ducimus Fugit tenetur fugit ratione assumenda quasi, doloremque optio Alias delectus dolor nobis maxime blanditiis nemo. Fugiat iusto nemo voluptatibus doloremque velit. Nulla magnam temporibus non ipsa molestiae? Vel molestiae nam cupiditate atque quos in delectus A incidunt quasi odio labore id corporis nisi voluptatum, quam beatae, reprehenderit Ratione dignissimos id sunt fugit hic voluptatem Aliquid blanditiis magni natus maxime obcaecati amet neque fugit voluptatibus Totam possimus voluptate ab placeat eos necessitatibus? Alias modi voluptate reprehenderit assumenda asperiores Consectetur provident hic unde repudiandae eaque Unde aperiam consectetur repellendus?
+    </p>
+    <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Download cv</a>
+  </div>
+</header>
+
+<div class="row my-4 text-center">
+  <h3>My Projects</h3>
+  <p>Sit molestias consequuntur minus non magni at doloremque aperiam ab.</p>
+
+  {% for project in projects %}
+
+  <div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+      <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
+      <div class="card-body">
+        <h2>{{project.title}}</h2>
+        <p>{{project.description}}</p>
+        {% if project.url %}
+          <a 
+            href="{{project.url}}"
+            class="btn btn-light rounded-0 btn-sm"
+            target="_blank"
+          >
+            View
+          </a>
+        {% endif%}
+      </div>
+    </div>
+  </div>
+
+  {% endfor%}
+  
+  {% endblock %}
+</div>
