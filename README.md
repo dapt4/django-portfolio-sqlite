@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/67972962/187000021-55a60ba6-8c5f-4eb5-be42-e83daf44fb8e.png)
+
+
 # django-portfolio-sqlite
 
 first create your virtualenv
